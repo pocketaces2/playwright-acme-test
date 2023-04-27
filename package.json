@@ -1,0 +1,21 @@
+{
+  "name": "playwright-acme-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pocketaces2/playwright-acme-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pocketaces2/playwright-acme-test/issues"
+  },
+  "homepage": "https://github.com/pocketaces2/playwright-acme-test#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  }
+}
