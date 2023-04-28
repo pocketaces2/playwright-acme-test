@@ -1,25 +1,19 @@
 {
   "name": "playwright-acme-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pocketaces2/playwright-acme-test.git"
+  "description": "playwright and cucumber framework to test the acme bank website",
+  "scripts": {
+    "test": "cucumber-js features/*"
   },
   "keywords": [],
   "author": "Tom Dodd",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pocketaces2/playwright-acme-test/issues"
-  },
-  "homepage": "https://github.com/pocketaces2/playwright-acme-test#readme",
   "devDependencies": {
     "@playwright/test": "^1.33.0"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^9.1.0",
+    "@cucumber/cucumber": "9.1.0",
+    "@cucumber/pretty-formatter": "1.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
