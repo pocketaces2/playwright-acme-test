@@ -1,19 +1,5 @@
 //Define cucumber options
 
-const firefox = {
-    browser: 'firefox',
-    context: {
-        ignoreHTTPSErrors: true
-    }
-}
-const chromium = {
-    browser: 'chromium',
-    context: {
-        ignoreHTTPSErrors: true,
-        args: ['--disable-dev-shm-usage', '--no-sandbox','--start-fullscreen']
-    }
-}
-
 const getWorldParams = () => {
     const params = {
         foo: 'bar',
@@ -42,9 +28,3 @@ const config = {
     config.format.push('@cucumber/pretty-formatter');
 
 export default config;
-
-// export default {
-//
-//     default: { ...common, worldParameters: chromium, run_features },
-//     chromium: { ...common, worldParameters: chromium },
-// }

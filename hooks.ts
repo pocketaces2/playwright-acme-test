@@ -1,10 +1,17 @@
-import {After, Before, setDefaultTimeout } from "@cucumber/cucumber";
+import {After, Before, BeforeAll, setDefaultTimeout} from "@cucumber/cucumber";
 import {Browser, chromium, Page} from "@playwright/test";
+import {browserConfig} from "./browserConfig";
+import {firefox, webkit} from "playwright";
+import { ensureDir } from 'fs-extra';
+
 
 let page: Page;
 let browser: Browser;
 //Must define as a String to compile
 let BASE_URL: string;
+
+const tracesDir = 'traces';
+
 
 let urls = {
     TEST_URL: 'https://localhost:3000',
@@ -16,12 +23,22 @@ BASE_URL = urls.PROD_URL;
 
 setDefaultTimeout(60000);
 
-//TODO: Add parameter options to browser.newContext()
-//TODO: Make browser dynamic
+BeforeAll(async function () {
+    switch (browserConfig.browser) {
+        case 'firefox':
+            browser = await firefox.launch(browserConfig.browserOptions);
+            break;
+        case 'webkit':
+            browser = await webkit.launch(browserConfig.browserOptions);
+            break;
+        default:
+            browser = await chromium.launch(browserConfig.browserOptions);
+    }
+    await ensureDir(tracesDir);
+});
 
 Before(async () => {
     try {
-        browser = await chromium.launch({headless: false});
         const context = await browser.newContext();
         page = await context.newPage();
         await page.goto('https://demo.applitools.com/');

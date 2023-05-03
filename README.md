@@ -29,6 +29,7 @@ Framework setup
 
 TODO
 
-Add reporting/screenshoting/feature file nav support
-Look into cucumber world object a bit more with Global.
+Clean up base url implementation
+Add screenshoting on fail support
+Usage of world params 
 
