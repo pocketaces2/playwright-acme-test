@@ -25,7 +25,11 @@ Framework setup
     2. Create a hooks.ts file to run before and after steps for all features (init browser + page)
     3. Create a cucumber.mjs file
 
+## Environment variable setup
 
+Create a file in root called .env and add the following:
+
+TEST_KEY=123456789
 
 TODO
 
